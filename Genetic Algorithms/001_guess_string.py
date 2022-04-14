@@ -9,12 +9,13 @@ def generate_parent(geneLength):
     random_word =  "".join(random.sample(geneSet, geneLength))
     return random_word
 
-# Evaluate the word
+# Evaluate the generated word
 def fitness(parent):
     match_list = [1 for i, j in zip(target, parent) if i == j]
     score = sum(match_list)
     return score
 
+# Make a litle change in the generated word
 def mutate(parent):
     index = random.randrange(0, len(parent))
     newGene = random.choice(geneSet)
@@ -29,7 +30,7 @@ def mutate(parent):
 bestParent = generate_parent(len(target))
 generation = 0
 
-
+# loop
 while True:
     generation += 1
     child = mutate(bestParent)
