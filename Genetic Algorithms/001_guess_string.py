@@ -6,13 +6,13 @@ target = "I like to learn python!"
 
 # Create a random word for the geneSet and have the same target length
 def generate_parent(geneLength):
-    random_word =  "".join(random.sample(geneSet, geneLength))
-    return random_word
+    randomWord =  "".join(random.sample(geneSet, geneLength))
+    return randomWord
 
 # Evaluate the generated word
 def fitness(parent):
-    match_list = [1 for i, j in zip(target, parent) if i == j]
-    score = sum(match_list)
+    matchList = [1 for i, j in zip(target, parent) if i == j]
+    score = sum(matchList)
     return score
 
 # Make a litle change in the generated word
