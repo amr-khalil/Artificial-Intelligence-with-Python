@@ -6,8 +6,8 @@ target = "I like to learn python!"
 
 # Create a random word for the geneSet and have the same target length
 def generate_parent(geneLength):
-    randomWord =  "".join(random.sample(geneSet, geneLength))
-    return randomWord
+    randomParent =  "".join(random.sample(geneSet, geneLength))
+    return randomParent
 
 # Evaluate the generated word
 def fitness(parent):
@@ -22,9 +22,9 @@ def mutate(parent):
 
     parentList = list(parent)
     parentList[index] = newGene
-    mutated_parent = "".join(parentList)
+    mutatedParent = "".join(parentList)
 
-    return mutated_parent
+    return mutatedParent
 
 # Intialization
 bestParent = generate_parent(len(target))
